@@ -11,14 +11,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // PUBLIC
-  // Anyone can get all books
+  
   if (req.method === "GET") {
     return getBooks(req, res);
   }
 
-  // ADMIN ONLY
-  // Create a book
   if (req.method === "POST") {
     const session = await getServerSession(
       req,

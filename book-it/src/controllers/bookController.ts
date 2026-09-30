@@ -5,7 +5,7 @@ import connectDB from "lib/mongodb";
 import Book from "models/Book";
 
 // GET ALL BOOKS
-// GET /api/book
+
 export async function getBooks(
   req: NextApiRequest,
   res: NextApiResponse
@@ -28,7 +28,7 @@ export async function getBooks(
 }
 
 // GET ONE BOOK
-// GET /api/book/:id
+
 export async function getBookById(
   req: NextApiRequest,
   res: NextApiResponse
@@ -71,7 +71,7 @@ export async function getBookById(
 }
 
 // CREATE BOOK
-// POST /api/book
+
 export async function createBook(
   req: NextApiRequest,
   res: NextApiResponse
@@ -172,18 +172,18 @@ if (totalCopies < 1) {
   });
 }
 
-// How many copies are currently rented?
+
 const rentedCopies =
   existingBook.totalCopies - existingBook.availableCopies;
 
-// Don't allow total copies to be less than rented copies
+
 if (totalCopies < rentedCopies) {
   return res.status(400).json({
     message: `You cannot reduce total copies below ${rentedCopies} because ${rentedCopies} copies are currently rented.`,
   });
 }
 
-// Calculate new available copies
+
 const newAvailableCopies =
   totalCopies - rentedCopies;
 
@@ -224,7 +224,7 @@ const book = await Book.findByIdAndUpdate(
 }
 
 // DELETE BOOK
-// DELETE /api/book/:id
+
 export async function deleteBook(
   req: NextApiRequest,
   res: NextApiResponse

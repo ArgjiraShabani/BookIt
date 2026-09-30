@@ -12,13 +12,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // PUBLIC
-  // Anyone can view a book
+  
   if (req.method === "GET") {
     return getBookById(req, res);
   }
 
-  // PUT and DELETE are ADMIN ONLY
+
   if (
     req.method === "PUT" ||
     req.method === "DELETE"
