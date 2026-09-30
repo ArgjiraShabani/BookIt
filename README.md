@@ -133,7 +133,7 @@ Main models include:
 
 The deployed application will be available at:
 
-**Vercel:** To be added after deployment.
+https://book-976mbl59o-argjirashabani.vercel.app/
 
 ## Team Members
 
